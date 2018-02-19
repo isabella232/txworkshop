@@ -1,5 +1,8 @@
 # txworkshop
 
+## Summary ##
+This image can be used for testing, [labs](labs/),demos, etc.
+
  # Environment #
 This docker image has 4 mariadb instances installed running on different ports:
 
