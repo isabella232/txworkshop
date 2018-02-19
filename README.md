@@ -21,6 +21,7 @@ To startup the nodes run:
 
 ``` 
 $ docker build . -t txworkshop
+$ docker run --name txworkshop -d -it -h txworkshop txworkshop
 ```
 To connect to maxscale node via mysql:
 
