@@ -38,7 +38,7 @@ RUN mkdir -p /var/run/mysqld/
 ## Cleanup
 RUN sudo rm -R /root/mariadb-10.2.12-rhel-7-x86_64-rpms*
 
-##RUN /root/scripts/init.sh
+RUN /root/scripts/init.sh
 
 #STOPSIGNAL SIGKILL
 ENTRYPOINT ["scripts/docker-entrypoint.sh"]
