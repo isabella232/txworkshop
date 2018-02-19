@@ -25,7 +25,7 @@ RUN mkdir -p /var/lib/mysql/{1,2,3,4}
 RUN touch /var/log/mysqld{1,2,3,4}.log
 RUN chmod o-r /var/log/mysqld{1,2,3,4}.log
 
-COPY scripts/*    /root/scripts
+COPY scripts/*    /root/scripts/
 #COPY scripts/my.cnf /etc/my.cnf
 #COPY scripts/maxscale.cnf /etc/maxscale.cnf
 #COPY scripts/masking_rules.json /etc
