@@ -35,6 +35,7 @@ RUN mkdir -p /root/scripts
 #COPY scripts/startup.sh  /root/
 #COPY scripts/init.sh     /root/scripts
 RUN chmod +x /root/scripts/init.sh
+RUN chmod +x /root/scripts/docker-entrypoint.sh
 RUN chmod +x /root/startup.sh
 
 RUN mkdir -p /var/run/mysqld/
