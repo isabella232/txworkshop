@@ -25,15 +25,15 @@ RUN mkdir -p /var/lib/mysql/{1,2,3,4}
 RUN touch /var/log/mysqld{1,2,3,4}.log
 RUN chmod o-r /var/log/mysqld{1,2,3,4}.log
 
-
-COPY scripts/my.cnf /etc/my.cnf
-COPY scripts/maxscale.cnf /etc/maxscale.cnf
-COPY scripts/masking_rules.json /etc
+COPY scripts/*    /root/scripts
+#COPY scripts/my.cnf /etc/my.cnf
+#COPY scripts/maxscale.cnf /etc/maxscale.cnf
+#COPY scripts/masking_rules.json /etc
 RUN mkdir -p /root/scripts
-COPY scripts/mariadb.sql /root/scripts
-COPY scripts/seed.sql    /root/scripts
-COPY scripts/startup.sh  /root/
-COPY scripts/init.sh     /root/scripts
+#COPY scripts/mariadb.sql /root/scripts
+#COPY scripts/seed.sql    /root/scripts
+#COPY scripts/startup.sh  /root/
+#COPY scripts/init.sh     /root/scripts
 RUN chmod +x /root/scripts/init.sh
 RUN chmod +x /root/startup.sh
 
@@ -45,4 +45,4 @@ RUN sudo rm -R /root/mariadb-10.2.12-rhel-7-x86_64-rpms*
 RUN /root/scripts/init.sh
 
 #STOPSIGNAL SIGKILL
-#ADD mariadb.sql /docker-entrypoint-initdb.d/mariadb.sql
+ENTRYPOINT ["scripts/docker-entrypoint.sh"]
