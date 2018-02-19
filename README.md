@@ -1,12 +1,16 @@
 # txworkshop
 
- # Heading 1 #
+ # Environment #
  Markup : This docker image has 4 mariadb instances installed running on different ports:
 
  Maxscale - 3306
+ 
  Mariadb1 - 33061
+ 
  Mariadb2 - 33062
+ 
  Mariadb3 - 33063
+ 
  Mariadb4 - 33064
 
 # Heading 2 #
