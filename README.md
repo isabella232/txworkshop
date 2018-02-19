@@ -20,7 +20,7 @@ Mariadb4 - 33064
 To startup the nodes run:
 
 ``` 
-$ ./startup.sh
+$ docker build . -t txworkshop
 ```
 To connect to maxscale node via mysql:
 
