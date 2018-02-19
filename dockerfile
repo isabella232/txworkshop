@@ -26,14 +26,14 @@ RUN touch /var/log/mysqld{1,2,3,4}.log
 RUN chmod o-r /var/log/mysqld{1,2,3,4}.log
 
 
-COPY my.cnf /etc/my.cnf
-COPY maxscale.cnf /etc/maxscale.cnf
-COPY masking_rules.json /etc
+COPY scripts/my.cnf /etc/my.cnf
+COPY scripts/maxscale.cnf /etc/maxscale.cnf
+COPY scripts/masking_rules.json /etc
 RUN mkdir -p /root/scripts
-COPY mariadb.sql /root/scripts
-COPY seed.sql    /root/scripts
-COPY startup.sh  /root/
-COPY init.sh     /root/scripts
+COPY scripts/mariadb.sql /root/scripts
+COPY scripts/seed.sql    /root/scripts
+COPY scripts/startup.sh  /root/
+COPY scripts/init.sh     /root/scripts
 RUN chmod +x /root/scripts/init.sh
 RUN chmod +x /root/startup.sh
 
