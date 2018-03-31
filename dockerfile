@@ -10,11 +10,8 @@ RUN wget https://downloads.mariadb.com/MaxScale/2.2.1/rhel/7/x86_64/maxscale-2.2
 RUN yum -y install maxscale-2.2.1-1.rhel.7.x86_64.rpm
 COPY scripts/maxscale.cnf /etc/maxscale.cnf
 
-## Install latest Mariadb
 WORKDIR /root
-RUN wget https://downloads.mariadb.com/MariaDB/mariadb-10.2.12/yum/rhel/mariadb-10.2.12-rhel-7-x86_64-rpms.tar
-RUN tar xvf mariadb-10.2.12-rhel-7-x86_64-rpms.tar
-RUN mariadb-10.2.12-rhel-7-x86_64-rpms/setup_repository
+COPY mariadb10_2.repo /etc/yum.repos.d/
 RUN yum -y install MariaDB-server
 
 RUN mkdir -p /usr/local/mysql/{1,2,3,4}/data
