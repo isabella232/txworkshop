@@ -36,8 +36,8 @@ RUN mkdir -p /var/run/mysqld/
 RUN /root/scripts/init.sh
 RUN cat scripts/mariadb_sig.txt >> /etc/MOTD
 RUN echo "cat /etc/MOTD" >> ~/.bashrc
-RUN echo "cat export HOST=127.0.0.1" >> ~/.bashrc
-RUN echo "cat export PASSWORD=password" >> ~/.bashrc
+RUN echo "export MYSQL_HOST=127.0.0.1" >> ~/.bashrc
+RUN echo "export MYSQL_PWDP=password" >> ~/.bashrc
 
 #STOPSIGNAL SIGKILL
 ENTRYPOINT ["scripts/docker-entrypoint.sh"]
