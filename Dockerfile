@@ -1,6 +1,7 @@
 FROM centos:7
 RUN yum -y update
-RUN yum -y install wget mysql sudo which epel-release python-pip gcc python-devel mysql-devel
+#RUN yum -y install wget mysql sudo which epel-release python-pip gcc python-devel mysql-devel
+RUN yum -y install wget mysql sudo which epel-release python-pip
 RUN yum -y install python-pip
 RUN pip install --upgrade pip
 RUN pip install MySQL-python
@@ -14,7 +15,8 @@ COPY scripts/maxscale.cnf /etc/maxscale.cnf
 WORKDIR /root
 COPY mariadb10_2.repo /etc/yum.repos.d/
 RUN yum -y install MariaDB-server
-
+RUN yum clean all
+RUN rm -rf /var/cache/yum
 RUN mkdir -p /usr/local/mysql/{1,2,3,4}/data
 
 RUN mkdir -p /var/lib/mysql/{1,2,3,4}
