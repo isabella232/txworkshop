@@ -1,10 +1,10 @@
 FROM centos:7
 RUN yum -y update
 #RUN yum -y install wget mysql sudo which epel-release python-pip gcc python-devel mysql-devel
-RUN yum -y install wget mysql sudo which epel-release python-pip
-RUN yum -y install python-pip
-RUN pip install --upgrade pip
-RUN pip install MySQL-python
+RUN yum -y install wget mysql sudo which epel-release
+#RUN yum -y install python-pip
+#RUN pip install --upgrade pip
+#RUN pip install MySQL-python
 
 ## Get and install Maxscale
 RUN wget https://downloads.mariadb.com/MaxScale/2.2.9/rhel/7/x86_64/maxscale-2.2.9-1.rhel.7.x86_64.rpm
