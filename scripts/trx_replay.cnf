@@ -1,12 +1,12 @@
 [maxscale]
 threads=auto
-libdir=/home/markusjm/rome-demo/build/lib64/maxscale
-logdir=/home/markusjm/rome-demo/build/log/maxscale/
-datadir=/home/markusjm/rome-demo/build/lib/maxscale
-cachedir=/home/markusjm/rome-demo/build/cache/maxscale
-language=/home/markusjm/rome-demo/build/lib/maxscale/
-piddir=/home/markusjm/rome-demo/build/run/maxscale/
-admin_auth=false
+#libdir=/home/markusjm/rome-demo/build/lib64/maxscale
+#logdir=/home/markusjm/rome-demo/build/log/maxscale/
+#datadir=/home/markusjm/rome-demo/build/lib/maxscale
+#cachedir=/home/markusjm/rome-demo/build/cache/maxscale
+#language=/home/markusjm/rome-demo/build/lib/maxscale/
+#piddir=/home/markusjm/rome-demo/build/run/maxscale/
+#admin_auth=false
 
 [server1]
 type=server
