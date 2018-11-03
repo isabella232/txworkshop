@@ -7,7 +7,7 @@ router=readwritesplit
 servers=dbserv1,dbserv2,dbserv3,dbserv4
 user=maxuser
 password=password
-router_options=master_failure_mode=fail_on_write
+master_failure_mode=fail_on_write
 filters=MyMasking
 
 [Splitter-Listener]
