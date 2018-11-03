@@ -4,7 +4,7 @@ threads=2
 [Splitter-Service]
 type=service
 router=readwritesplit
-servers=dbserv1,dbserv2,dbserv3,dbserv4
+servers=server1,server2,server3,server4
 user=maxuser
 password=maxpwd
 master_failure_mode=fail_on_write
@@ -51,7 +51,7 @@ protocol=MariaDBBackend
 [TheMonitor]
 type=monitor
 module=mariadbmon
-servers=dbserv1,dbserv2,dbserv3,dbserv4
+servers=server1,server2,server3,server4
 user=maxuser
 password=maxpwd
 auto_failover=true
