@@ -52,7 +52,8 @@ user=maxuser
 password=maxpwd
 # Enables transaction replay
 transaction_replay=true
-master_failure_mode=fail_on_write ### https://jira.mariadb.org/browse/MXS-2139
+# Line below is for https://jira.mariadb.org/browse/MXS-2139
+master_failure_mode=fail_on_write
 
 [RW-Split-Listener]
 type=listener
