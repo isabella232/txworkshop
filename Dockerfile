@@ -42,5 +42,9 @@ RUN echo "cat /etc/MOTD" >> ~/.bashrc
 RUN echo "export MYSQL_HOST=127.0.0.1" >> ~/.bashrc
 RUN echo "export MYSQL_PWDP=maxpwd" >> ~/.bashrc
 
+RUN yum install -y bc && \
+    yum clean all && \
+    rm -rf /var/cache/yum
+
 #STOPSIGNAL SIGKILL
 ENTRYPOINT ["scripts/docker-entrypoint.sh"]
