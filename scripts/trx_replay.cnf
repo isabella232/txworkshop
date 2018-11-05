@@ -50,6 +50,8 @@ router=readwritesplit
 servers=server1,server2,server3,server4
 user=maxuser
 password=maxpwd
+# Next Line Enables Causal Reads
+#causal_reads=true
 # Enables transaction replay
 transaction_replay=true
 # Line below is for https://jira.mariadb.org/browse/MXS-2139
