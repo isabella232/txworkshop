@@ -9,7 +9,7 @@ RUN rm /maxscale-2.*.rpm
 COPY scripts/maxscale.cnf /etc/maxscale.cnf
 
 WORKDIR /root
-COPY mariadb10_2.repo /etc/yum.repos.d/
+COPY mariadb.repo /etc/yum.repos.d/
 RUN yum -y install MariaDB-server
 RUN mkdir -p /usr/local/mysql/{1,2,3,4}/data
 
