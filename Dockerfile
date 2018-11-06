@@ -16,8 +16,6 @@ COPY scripts/maxscale.cnf /etc/maxscale.cnf
 WORKDIR /root
 COPY mariadb10_2.repo /etc/yum.repos.d/
 RUN yum -y install MariaDB-server
-RUN yum clean all
-RUN rm -rf /var/cache/yum
 RUN mkdir -p /usr/local/mysql/{1,2,3,4}/data
 
 RUN mkdir -p /var/lib/mysql/{1,2,3,4}
@@ -26,13 +24,12 @@ RUN touch /var/log/mysqld{1,2,3,4}.log
 RUN chmod o-r /var/log/mysqld{1,2,3,4}.log
 COPY scripts/masking_rules.json /etc/
 COPY scripts/my.cnf /etc/
-COPY scripts/*    /root/scripts/
 
 RUN mkdir -p /root/scripts
 
-RUN chmod +x /root/scripts/init.sh
-RUN chmod +x /root/scripts/docker-entrypoint.sh
-RUN chmod +x /root/scripts/startup.sh
+COPY scripts/*    /root/scripts/
+
+RUN chmod +x /root/scripts/*.sh
 
 RUN mkdir -p /var/run/mysqld/
 
