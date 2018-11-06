@@ -1,7 +1,8 @@
 FROM centos:7
 RUN yum -y update
 #RUN yum -y install wget mysql sudo which epel-release python-pip gcc python-devel mysql-devel
-RUN yum -y install wget mysql sudo which epel-release
+RUN yum -y install wget mysql sudo which epel-release psmisc
+
 #RUN yum -y install python-pip
 #RUN pip install --upgrade pip
 #RUN pip install MySQL-python
@@ -38,6 +39,7 @@ RUN cat scripts/mariadb_sig.txt >> /etc/MOTD
 RUN echo "cat /etc/MOTD" >> ~/.bashrc
 RUN echo "export MYSQL_HOST=127.0.0.1" >> ~/.bashrc
 RUN echo "export MYSQL_PWDP=maxpwd" >> ~/.bashrc
+RUN echo "alias bounce='/root/scripts/bounce.sh'" >> /root/.bashrc
 
 RUN yum install -y bc && \
     yum clean all && \
