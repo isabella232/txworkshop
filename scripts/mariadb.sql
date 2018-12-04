@@ -28,7 +28,7 @@ RESET MASTER;
 DELIMITER |
 IF @@server_id  > 1 THEN
   CHANGE MASTER TO
-    MASTER_HOST='localhost',
+    MASTER_HOST='127.0.0.1',
     MASTER_USER='maxuser',
     MASTER_PASSWORD='maxpwd',
     MASTER_PORT=33061,
