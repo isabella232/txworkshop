@@ -55,6 +55,7 @@ module=mariadbmon
 servers=server1,server2,server3,server4
 user=maxuser
 password=maxpwd
+failcount=3
 auto_failover=true
 auto_rejoin=true
 
