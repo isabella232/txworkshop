@@ -9,6 +9,7 @@ user=maxuser
 password=maxpwd
 master_failure_mode=fail_on_write
 filters=MyMasking
+delayed_retry_timeout=25
 
 [Splitter-Listener]
 type=listener
