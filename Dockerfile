@@ -31,7 +31,7 @@ RUN mkdir -p /var/run/mysqld/
 
 RUN /root/scripts/init.sh
 RUN cat scripts/mariadb_sig.txt >> /etc/MOTD
-RUN echo "cat /etc/MOTD" >> ~/.bashrc
+RUN echo "clear;cat /etc/MOTD" >> ~/.bashrc
 RUN echo "export MYSQL_HOST=127.0.0.1" >> ~/.bashrc
 RUN echo "export MYSQL_PWDP=maxpwd" >> ~/.bashrc
 RUN echo "alias bounce='/root/scripts/bounce.sh'" >> /root/.bashrc
