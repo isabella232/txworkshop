@@ -27,13 +27,13 @@ To connect to maxscale node via mysql:
 
 ```
 $ mysql -h 127.0.0.1 -u maxuser -p -P 3306
-The password is "password"
+The password is "maxpwd"
 ```
 To connect to Mariadb1 example:
 
 ```
 $ mysql -h 127.0.0.1 -u maxuser -p -P 33061
-The password is "password"
+The password is "maxpwd"
 ```
 
 To start (or stop) an individual MariaDB node:
