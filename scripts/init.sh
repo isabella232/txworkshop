@@ -19,4 +19,6 @@ mysql -h 127.0.0.1 -P 33064 < ./scripts/mariadb.sql
 sleep 15
 mysql -h 127.0.0.1 -P 33061 < ./scripts/seed.sql
 
+maxctrl call command mariadbmon reset-replication TheMonitor server1
+
 
