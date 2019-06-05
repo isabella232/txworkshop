@@ -20,20 +20,3 @@ GRANT SHOW DATABASES ON *.* TO 'maxuser'@'localhost';
 GRANT CREATE, ALTER, SELECT, INSERT, UPDATE, DELETE ON *.* TO 'maxuser'@'localhost';
 GRANT REPLICATION CLIENT on *.* to 'maxuser'@'localhost';
 GRANT REPLICATION SLAVE ON *.* TO 'maxuser'@'localhost';
-
-
-
-RESET MASTER;
-
-DELIMITER |
-IF @@server_id  > 1 THEN
-  CHANGE MASTER TO
-    MASTER_HOST='127.0.0.1',
-    MASTER_USER='maxuser',
-    MASTER_PASSWORD='maxpwd',
-    MASTER_PORT=33061,
-    MASTER_CONNECT_RETRY=10,
-    master_use_gtid=current_pos;
-  START SLAVE;
-END IF |
-DELIMITER ;
