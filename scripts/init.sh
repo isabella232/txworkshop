@@ -19,6 +19,9 @@ mysql -h 127.0.0.1 -P 33064 < ./scripts/mariadb.sql
 sleep 15
 maxctrl call command mariadbmon reset-replication TheMonitor server1
 sleep 5
+### Not sure why it takes running this command twice.. but it does?!?!?
+maxctrl call command mariadbmon reset-replication TheMonitor server1
+sleep 3
 mysql -h 127.0.0.1 -P 33061 < ./scripts/seed.sql
 
 
