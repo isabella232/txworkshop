@@ -4,7 +4,7 @@ RUN yum -y install wget mysql sudo which epel-release psmisc
 
 ## Get and install Maxscale
 ## Old Version - RUN wget https://downloads.mariadb.com/MaxScale/2.3.2/centos/7/x86_64/maxscale-2.3.2-1.centos.7.x86_64.rpm
-RUN wget https://downloads.mariadb.com/MaxScale/2.3.7/centos/7/x86_64/maxscale-2.3.7-1.centos.7.x86_64.rpm
+RUN wget https://downloads.mariadb.com/MaxScale/2.3.11/centos/7/x86_64/maxscale-2.3.11-1.centos.7.x86_64.rpm
 RUN yum -y install maxscale-2.*.rpm
 RUN rm /maxscale-2.*.rpm
 COPY scripts/maxscale.cnf /etc/maxscale.cnf
