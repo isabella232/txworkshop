@@ -16,14 +16,7 @@ mysql -S /var/lib/mysql/2/mysql.sock -P 33062 < ./scripts/mariadb.sql
 mysql -S /var/lib/mysql/3/mysql.sock -P 33063 < ./scripts/mariadb.sql 
 mysql -S /var/lib/mysql/4/mysql.sock -P 33064 < ./scripts/mariadb.sql 
 
-sleep 15
-maxctrl call command mariadbmon reset-replication TheMonitor server1
 sleep 5
-### Not sure why it takes running this command twice.. but it does?!?!?
-maxctrl call command mariadbmon reset-replication TheMonitor server1
-sleep 3
 mysql -S /var/lib/mysql/1/mysql.sock -P 33061 < ./scripts/seed.sql
 
-
-
-
+maxctrl call command mariadbmon reset-replication TheMonitor server1
