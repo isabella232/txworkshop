@@ -1,0 +1,20 @@
+Use these commands to copy/paste:
+
+/root/scripts - directory where all scripts are located
+watch -n 1 maxctrl list servers - show status of servers in maxscale (auto refresh)
+tail -f /var/log/maxscale/maxscale.log - used to tail the log of maxscale log
+
+Enable Transaction Replay:
+maxctrl alter service Splitter-Service transaction_replay true
+
+Disable Transaction Replay:
+maxctrl alter service Splitter-Service transaction_replay false
+
+Enable Causal Reads:
+maxctrl alter service Splitter-Service causal_reads true
+
+Disable Causal Reads:
+maxctrl alter service Splitter-Service causal_reads false
+
+Reset replication:
+maxctrl call command mariadbmon reset-replication TheMonitor server1
