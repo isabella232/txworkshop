@@ -35,6 +35,7 @@ RUN echo "clear;cat /etc/MOTD" >> ~/.bashrc
 RUN echo "export MYSQL_HOST=127.0.0.1" >> ~/.bashrc
 RUN echo "export MYSQL_PWDP=maxpwd" >> ~/.bashrc
 RUN echo "alias bounce='/root/scripts/bounce.sh'" >> /root/.bashrc
+RUN echo "alias cheat='cat /root/scripts/help.txt'" >> /root/.bashrc
 
 RUN yum install -y bc && \
     yum clean all && \
